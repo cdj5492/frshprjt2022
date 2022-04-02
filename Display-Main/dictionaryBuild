@@ -1,0 +1,23 @@
+import os
+cDict = dict()
+dirname = os.path.dirname(__file__)
+def dictBuild(relativeDirectory):
+    directory = os.path.join(dirname, relativeDirectory)
+    for file in os.listdir(directory):
+        filename = os.fsdecode(file)
+        #if filename.startswith("U+") or filename.endswith(".py"): 
+        #    print(chr(int(filename[2:len(filename)-4])))
+        #    continue
+        #else:
+        print(filename[0:len(filename)-4])
+        cDict[filename] = os.path.join(directory, file)
+        print(cDict[filename])
+        continue
+
+dictBuild('glyphs/letters')
+dictBuild('glyphs/numbers_big')
+dictBuild('glyphs/numbers_small')
+dictBuild('glyphs/symbols')
+dictBuild('glyphs/symbols/arrows')
+dictBuild('glyphs/images')
+print(cDict)
