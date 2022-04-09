@@ -15,7 +15,7 @@ def main():
     A = dictionaryBuild.cDict['A']
     for x in range(8):
         for y in range(8):
-            pixels[x+y*8] = A.getPixel(x, y)
+            pixels[x+y*displayWidth] = A.getPixel(x, y)
 
 if __name__ == '__main__':
     main()
