@@ -17,7 +17,7 @@ def main():
         for y in range(8):
             print(A.getPixel(x, y))
             pixels[x+y*displayWidth] = A.getPixel(x, y)
-    pixels.fill((0,0,255))
+    pixels.fill((255,255,255))
 
 if __name__ == '__main__':
     main()
