@@ -24,8 +24,8 @@ class Glyph:
     def debugPrint(glyph):
         for i in range(8):
             for j in range(glyph.width):
-                if(glyph.pixel[i][j] == (0, 0, 0)): print('▯', end = '')
-                else: print('█', end = '')
+                if(glyph.pixel[i][j] == (0, 0, 0)): print(' ', end = ' ')
+                else: print('█', end = ' ')
             print('')
 
 
@@ -51,4 +51,6 @@ def fullDictBuild():
     dictBuild('glyphs/images')
 #for item in cDict:
     #print(item + ': ' + cDict[item])
-#cDict['A'].debugPrint()
+if __name__ == '__main__':
+    fullDictBuild()
+    cDict['A'].debugPrint()
