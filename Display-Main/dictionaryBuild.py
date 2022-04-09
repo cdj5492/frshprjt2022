@@ -7,24 +7,19 @@ class Glyph:
     def __init__(glyph, path):
         img = Image.open(path)
         glyph.width = img.size[0]
-        glyph.pixel = []
-        for i in range(img.size[1]):
-            glyph.pixel.append([])
-            for j in range(img.size[0]):
-                glyph.pixel[i].append([])
-                glyph.pixel[i][j] = img.getpixel((j,i))
+        glyph.pixel = img.load()
     
     def getWidth(glyph):
         return(glyph.width)
     
     def getPixel(glyph, row, col, rgb=(255,255,255)):
-        if(glyph.pixel[col][row] == (255,255,255)): return(rgb) 
-        else: return(glyph.pixel[col][row])
+        if(glyph.pixel[col,row] == (255,255,255)): return(rgb) 
+        else: return(glyph.pixel[col,row])
 
     def debugPrint(glyph):
         for i in range(8):
             for j in range(glyph.width):
-                if(glyph.pixel[i][j] == (0, 0, 0)): print(' ', end = ' ')
+                if(glyph.pixel[j,i] == (0, 0, 0)): print(' ', end = ' ')
                 else: print('█', end = ' ')
             print('')
 
