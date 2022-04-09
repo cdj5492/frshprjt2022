@@ -13,8 +13,10 @@ class Glyph:
             for j in range(img.size[0]):
                 glyph.pixel[i].append([])
                 glyph.pixel[i][j] = img.getpixel((j,i))
-                # print(img.getpixel((j,i)))
-
+    
+    def getWidth(glyph):
+        return(glyph.width)
+    
     def getPixel(glyph, row, col, rgb=(255,255,255)):
         if(glyph.pixel[col, row] == (255,255,255)): return(rgb) 
         else: return(glyph.pixel[col, row])
