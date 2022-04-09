@@ -6,7 +6,7 @@ dirname = os.path.dirname(__file__)
 class Glyph:
     def __init__(glyph, path):
         img = Image.open(path)
-        glyph.width = img.size[1]
+        glyph.width = img.size[0]
         glyph.pixel = []
         for i in range(img.size[1]):
             glyph.pixel.append([])
@@ -14,9 +14,17 @@ class Glyph:
                 glyph.pixel[i].append([])
                 glyph.pixel[i][j] = img.getpixel((j,i))
                 print(img.getpixel((j,i)))
+
     def getPixel(glyph, row, col, rgb=(255,255,255)):
-        if(glyph.pixel[col, row] == (255,255,255)): return(rbg) 
+        if(glyph.pixel[col, row] == (255,255,255)): return(rgb) 
         else: return(glyph.pixel[col, row])
+
+    def debugPrint(glyph):
+        for i in range(8):
+            for j in range(glyph.width):
+                if(glyph.pixel[i][j] == (0, 0, 0)): print('▯', end = '')
+                else: print('█', end = '')
+            print('')
 
 
 def dictBuild(relativeDirectory):
@@ -40,4 +48,4 @@ dictBuild('glyphs/arrows')
 dictBuild('glyphs/images')
 #for item in cDict:
     #print(item + ': ' + cDict[item])
-print(cDict['A'].pixel)
+cDict['A'].debugPrint()
