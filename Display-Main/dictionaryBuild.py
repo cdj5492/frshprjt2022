@@ -51,4 +51,4 @@ def fullDictBuild():
     dictBuild('glyphs/images')
 #for item in cDict:
     #print(item + ': ' + cDict[item])
-cDict['A'].debugPrint()
+#cDict['A'].debugPrint()
