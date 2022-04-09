@@ -13,8 +13,8 @@ class Glyph:
         return(glyph.width)
     
     def getPixel(glyph, row, col, rgb=(255,255,255)):
-        if(glyph.pixel[col,row] == (255,255,255)): return(rgb) 
-        else: return(glyph.pixel[col,row])
+        if(glyph.pixel[row,col] == (255,255,255)): return(rgb) 
+        else: return(glyph.pixel[row,col])
 
     def debugPrint(glyph):
         for i in range(8):
@@ -49,3 +49,4 @@ def fullDictBuild():
 if __name__ == '__main__':
     fullDictBuild()
     cDict['A'].debugPrint()
+    print(cDict['A'].getPixel(4,7))
