@@ -1,5 +1,9 @@
 import board
 import neopixel
+import dictionaryBuild
+
+
+
 
 displayWidth = 32
 displayHeight = 8
@@ -7,7 +11,11 @@ displayHeight = 8
 pixels = neopixel.NeoPixel(board.D18, displayWidth * displayHeight)
 
 def main():
-    pixels[0] = (255,255,255)
+    fullDictBuild()
+    A = cDict['A']
+    for x in range(8):
+        for y in range(8):
+            pixels[x+y*8] = A.getPixel(x, y)
 
 if __name__ == '__main__':
     main()

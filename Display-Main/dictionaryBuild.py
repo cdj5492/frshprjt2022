@@ -13,7 +13,7 @@ class Glyph:
             for j in range(img.size[0]):
                 glyph.pixel[i].append([])
                 glyph.pixel[i][j] = img.getpixel((j,i))
-                print(img.getpixel((j,i)))
+                # print(img.getpixel((j,i)))
 
     def getPixel(glyph, row, col, rgb=(255,255,255)):
         if(glyph.pixel[col, row] == (255,255,255)): return(rgb) 
@@ -40,12 +40,13 @@ def dictBuild(relativeDirectory):
         #print(cDict[filename])
         continue
 
-dictBuild('glyphs/letters')
-dictBuild('glyphs/numbers_big')
-dictBuild('glyphs/numbers_small')
-dictBuild('glyphs/symbols')
-dictBuild('glyphs/arrows')
-dictBuild('glyphs/images')
+def fullDictBuild():
+    dictBuild('glyphs/letters')
+    dictBuild('glyphs/numbers_big')
+    dictBuild('glyphs/numbers_small')
+    dictBuild('glyphs/symbols')
+    dictBuild('glyphs/arrows')
+    dictBuild('glyphs/images')
 #for item in cDict:
     #print(item + ': ' + cDict[item])
 cDict['A'].debugPrint()
