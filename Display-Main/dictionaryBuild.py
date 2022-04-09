@@ -18,8 +18,8 @@ class Glyph:
         return(glyph.width)
     
     def getPixel(glyph, row, col, rgb=(255,255,255)):
-        if(glyph.pixel[col, row] == (255,255,255)): return(rgb) 
-        else: return(glyph.pixel[col, row])
+        if(glyph.pixel[col][row] == (255,255,255)): return(rgb) 
+        else: return(glyph.pixel[col][row])
 
     def debugPrint(glyph):
         for i in range(8):
