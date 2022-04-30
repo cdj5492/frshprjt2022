@@ -17,8 +17,8 @@ def main():
         for y in range(8):
             print(x+y*displayWidth, end='')
             print(A.getPixel(x, y))
-            # pixels[x+y*displayWidth] = A.getPixel(x, y)
-            pixels[x+y*displayWidth] = (255,255,255)
+            pixels[x+y*displayWidth] = A.getPixel(x, y)
+            #pixels[x+y*displayWidth] = (255,255,255)
     #pixels[0] = (255,255,255)
     
 
